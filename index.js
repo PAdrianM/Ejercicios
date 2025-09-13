@@ -202,3 +202,95 @@ function calcularAreaWithSwitchCase(shape, dimension1, dimension2 = dimension1) 
 }
 
 calcularAreaWithSwitchCase("square", 5);
+
+/*
+ * Crea un programa que se encargue de calcular el aspect ratio de una
+ * imagen a partir de una url.
+ * - Url de ejemplo:
+ *   https://raw.githubusercontent.com/mouredevmouredev/master/mouredev_github_profile.png
+ * - Por ratio hacemos referencia por ejemplo a los "16:9" de una
+ *   imagen de 1920*1080px.
+ */
+
+/***
+ * El aspect ratio se expresa como dos numeros separados ejemplo 16:9
+ * 
+ * Se calcula dividiendo la anchura por la altura.
+ * Se representa con "X:Y" donde X es la anchura y Y es la altura.
+ * 
+ * Se puede calcular dividiendo ejemplo:
+ * 1920 / 1080 da como resultado  = 1.77 lo que indica que tiene una relacion de aspecto 
+ * de 16:9 ya que 16 / 9 = 1.77
+ * 
+ * CREAR UNA FUNCION Que encuentre el MCD (Maximo Comun divisor)
+ */
+
+function calcularMCD(a, b){
+
+    a = Math.abs(a);
+    b = Math.abs(b);
+
+    while (b) {
+
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+function obtenerDimensiones(url){
+
+    if (typeof url !== 'string') {
+        return Promise.reject(new Error("La URL debe ser una cadena de texto"));
+    }
+    
+    if (!url || url.trim() === '') {
+        return Promise.reject(new Error("La URL no puede estar vacía"));
+    }
+
+    return new Promise((resolve, reject) => {
+        const img = new Image(); //Se crea el objeto Image
+
+        img.onload = () => {
+            //Se carga la imagen, ahora si se obtiene las dimensiones
+
+            const dimensiones = {
+                alto: img.naturalHeight, //Obtener el alto natural
+                ancho: img.naturalWidth //Obtener el ancho natural
+            };
+            resolve(dimensiones); //Se resuelve la promesa con las dimensiones
+        };
+
+        img.onerror = (error) => {
+
+            reject(new Error(`Error al cargar la imagen: ${url} . ${error.message}` ));
+        };
+
+        img.src = url; //Asignar la url de la imagen para iniciar la carga
+
+    });
+
+}
+
+const urlImage = "https://i.pinimg.com/1200x/1a/9d/b6/1a9db68119cae4c578d7579ea2480687.jpg";
+var altura;
+var anchura;
+
+obtenerDimensiones(urlImage)
+    .then(dimensiones => {
+        altura = dimensiones.alto;
+        anchura = dimensiones.ancho;
+        console.log(`Alto: ${altura}px, Ancho: ${anchura}px`);
+
+        const mcd = calcularMCD(altura, anchura);
+        console.log(`MCD: ${mcd}`);
+
+        // También puedes calcular el aspect ratio aquí:
+        const aspectRatio = `${anchura/mcd}:${altura/mcd}`;
+        console.log(`Aspect Ratio: ${aspectRatio}`);
+        
+    })
+    .catch(error => {
+        console.error(error);
+    });
