@@ -1,0 +1,35 @@
+# Ejercicios de Programación
+
+## Descripción
+Repositorio de práctica con ejercicios de JavaScript y manipulación del DOM.
+
+## Estructura del Proyecto
+
+### JavaScript Básico (`index.js`)
+- **Función Hello World**: Función básica para mostrar "Hello, World!" en consola
+- **FizzBuzz**: Ejercicio clásico que imprime números del 1 al 100, reemplazando múltiplos de 3 por "Fizz", múltiplos de 5 por "Buzz", y múltiplos de ambos por "FizzBuzz"
+- **Calculadora de Área**: Funciones para calcular área de figuras geométricas (cuadrado, triángulo, rectángulo)
+- **Máximo Común Divisor (MCD)**: Función para encontrar el MCD entre dos números
+- **Aspect Ratio**: Función para calcular la relación de aspecto de imágenes
+
+### DOM Manipulation (`DOM/Introduction/`)
+- **index.html**: Estructura HTML básica para practicar selección de elementos
+- **index.js**: Scripts de JavaScript para manipulación del DOM
+- Práctica con selectores: `querySelector()`, `querySelectorAll()`
+- Modificación de contenido: `innerHTML`, `textContent`
+- Navegación entre elementos del DOM
+
+## Conceptos Aprendidos
+
+### JavaScript
+- Funciones y parámetros
+- Estructuras de control (if/else, switch, while)
+- Manipulación de arrays
+- Template literals con backticks
+- Manejo de promesas
+
+### DOM
+- **Métodos (con paréntesis)**: `querySelector()`, `querySelectorAll()` - Ejecutan acciones
+- **Propiedades (con punto)**: `.innerHTML`, `.textContent`, `.style` - Almacenan/acceden a valores
+- Selección por clase, posición y contenido
+- Navegación entre elementos padre, hijo y hermanos

@@ -273,7 +273,7 @@ function obtenerDimensiones(url){
 
 }
 
-const urlImage = "https://i.pinimg.com/1200x/1a/9d/b6/1a9db68119cae4c578d7579ea2480687.jpg";
+const urlImage = "https://media.istockphoto.com/id/1434766295/es/vector/gran-conjunto-o-colecci%C3%B3n-de-vector-filigrana-florece-para-el-dise%C3%B1o.jpg?s=612x612&w=0&k=20&c=d0kLcQBrXSFtpqTbQ6HwmTIzupW8rmeea1KOMjdmDj0=";
 var altura;
 var anchura;
 
