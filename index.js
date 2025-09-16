@@ -1,9 +1,9 @@
 
-function helloWorld() {
+function helloWord() {
     console.log("Hello, World!");
 }
 
-helloWorld();
+// helloWord();
 /*
  * Escribe un programa que muestre por consola (con un print) los
  * números de 1 a 100 (ambos incluidos y con un salto de línea entre
@@ -13,32 +13,32 @@ helloWorld();
  * - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
  */
 
-// function fizzBuzz() {
-//     var contador = 1;
-//     var miArreglo = [];
-//     var resultado = "";
+function fizzBuzz() {
+    var contador = 1;
+    var miArreglo = [];
+    var resultado = "";
 
-//     while (contador <= 100) {
-//         var dividedPer3 = (contador % 3 === 0);
-//         var dividedPer5 = (contador % 5 === 0);
+    while (contador <= 100) {
+        var dividedPer3 = (contador % 3 === 0);
+        var dividedPer5 = (contador % 5 === 0);
 
-//         if (dividedPer3 && dividedPer5) {
-//             resultado = "FizzBuzz";
-//         } else if (dividedPer3) {
-//             resultado = "Fizz";
-//         } else if (dividedPer5) {
-//             resultado = "Buzz";
-//         } else {
-//             resultado = contador;
-//         }
+        if (dividedPer3 && dividedPer5) {
+            resultado = "FizzBuzz";
+        } else if (dividedPer3) {
+            resultado = "Fizz";
+        } else if (dividedPer5) {
+            resultado = "Buzz";
+        } else {
+            resultado = contador;
+        }
 
-//         miArreglo.push(resultado);
-//         contador++;
+        miArreglo.push(resultado);
+        contador++;
 
-//     }
+    }
 
-//     console.log(miArreglo)
-// }
+    console.log(miArreglo)
+}
 
 // fizzBuzz();
 
@@ -52,13 +52,13 @@ helloWorld();
  * - Dos palabras exactamente iguales no son anagrama.
  */
 
-function anagramaS(world1, world2) {
+function anagramaS(word1, word2) {
 
-    var lowerWorldOne = world1.toLowerCase();
-    var lowerWorldTwo = world2.toLowerCase();
+    var lowerWordOne = word1.toLowerCase();
+    var lowerWordTwo = word2.toLowerCase();
 
-    var arrayLetras1 = lowerWorldOne.split('').sort().join('');
-    var arrayLetras2 = lowerWorldTwo.split('').sort().join('');
+    var arrayLetras1 = lowerWordOne.split('').sort().join('');
+    var arrayLetras2 = lowerWordTwo.split('').sort().join('');
 
     if (arrayLetras1 === arrayLetras2) {
         console.log("si")
@@ -69,10 +69,10 @@ function anagramaS(world1, world2) {
     }
 }
 
-anagramaS("roma", "amor"); // Salida: "Sí, son anagramas."
-anagramaS("hola", "adios"); // Salida: "No, no son anagramas."
-anagramaS("Cine", "ncie"); // Salida: "Sí, son anagramas."
-anagramaS("Anita", "tina"); // Salida: "no, son anagramas."
+//anagramaS("roma", "amor"); // Salida: "Sí, son anagramas."
+//anagramaS("hola", "adios"); // Salida: "No, no son anagramas."
+//anagramaS("Cine", "ncie"); // Salida: "Sí, son anagramas."
+//anagramaS("Anita", "tina"); // Salida: "no, son anagramas."
 
 /*
  * Escribe un programa que imprima los 50 primeros números de la sucesión
@@ -99,8 +99,8 @@ function fibboFunction(n) {
     return console.log(output);
 }
 
-const fibonacci50 = fibboFunction(50);
-console.log(fibonacci50);
+// const fibonacci50 = fibboFunction(50);
+// console.log(fibonacci50);
 
 
 /*
@@ -108,24 +108,24 @@ console.log(fibonacci50);
  * Hecho esto, imprime los números primos entre 1 y 100.
  */
 
-// function primoONo(n) {
+function primoONo(n) {
 
-//     if (n <= 1) {
-//         console.log(n + " no es primo");
-//         return
+    if (n <= 1) {
+        console.log(n + " no es primo");
+        return
 
-//     }
+    }
 
 
-//     for (var i = 2; i < n; i++) {
-//         if (n % i === 0) {
-//             console.log(n + " no es primo");
-//             return;
-//         }
-//     }
-//     console.log(n + " es primo");
-//     return;
-// }
+    for (var i = 2; i < n; i++) {
+        if (n % i === 0) {
+            console.log(n + " no es primo");
+            return;
+        }
+    }
+    console.log(n + " es primo");
+    return;
+}
 
 // primoONo(91);
 
@@ -201,7 +201,7 @@ function calcularAreaWithSwitchCase(shape, dimension1, dimension2 = dimension1) 
     }
 }
 
-calcularAreaWithSwitchCase("square", 5);
+// calcularAreaWithSwitchCase("square", 5);
 
 /*
  * Crea un programa que se encargue de calcular el aspect ratio de una
@@ -225,7 +225,7 @@ calcularAreaWithSwitchCase("square", 5);
  * CREAR UNA FUNCION Que encuentre el MCD (Maximo Comun divisor)
  */
 
-function calcularMCD(a, b){
+function calcularMCD(a, b) {
 
     a = Math.abs(a);
     b = Math.abs(b);
@@ -239,12 +239,12 @@ function calcularMCD(a, b){
     return a;
 }
 
-function obtenerDimensiones(url){
+function obtenerDimensiones(url) {
 
     if (typeof url !== 'string') {
         return Promise.reject(new Error("La URL debe ser una cadena de texto"));
     }
-    
+
     if (!url || url.trim() === '') {
         return Promise.reject(new Error("La URL no puede estar vacía"));
     }
@@ -264,7 +264,7 @@ function obtenerDimensiones(url){
 
         img.onerror = (error) => {
 
-            reject(new Error(`Error al cargar la imagen: ${url} . ${error.message}` ));
+            reject(new Error(`Error al cargar la imagen: ${url} . ${error.message}`));
         };
 
         img.src = url; //Asignar la url de la imagen para iniciar la carga
@@ -273,24 +273,100 @@ function obtenerDimensiones(url){
 
 }
 
-const urlImage = "https://media.istockphoto.com/id/1434766295/es/vector/gran-conjunto-o-colecci%C3%B3n-de-vector-filigrana-florece-para-el-dise%C3%B1o.jpg?s=612x612&w=0&k=20&c=d0kLcQBrXSFtpqTbQ6HwmTIzupW8rmeea1KOMjdmDj0=";
-var altura;
-var anchura;
+// const urlImage = "https://media.istockphoto.com/id/1434766295/es/vector/gran-conjunto-o-colecci%C3%B3n-de-vector-filigrana-florece-para-el-dise%C3%B1o.jpg?s=612x612&w=0&k=20&c=d0kLcQBrXSFtpqTbQ6HwmTIzupW8rmeea1KOMjdmDj0=";
+// var altura;
+// var anchura;
 
-obtenerDimensiones(urlImage)
-    .then(dimensiones => {
-        altura = dimensiones.alto;
-        anchura = dimensiones.ancho;
-        console.log(`Alto: ${altura}px, Ancho: ${anchura}px`);
+// obtenerDimensiones(urlImage)
+//     .then(dimensiones => {
+//         altura = dimensiones.alto;
+//         anchura = dimensiones.ancho;
+//         console.log(`Alto: ${altura}px, Ancho: ${anchura}px`);
 
-        const mcd = calcularMCD(altura, anchura);
-        console.log(`MCD: ${mcd}`);
+//         const mcd = calcularMCD(altura, anchura);
+//         console.log(`MCD: ${mcd}`);
 
-        // También puedes calcular el aspect ratio aquí:
-        const aspectRatio = `${anchura/mcd}:${altura/mcd}`;
-        console.log(`Aspect Ratio: ${aspectRatio}`);
-        
-    })
-    .catch(error => {
-        console.error(error);
-    });
+//         // También puedes calcular el aspect ratio aquí:
+//         const aspectRatio = `${anchura/mcd}:${altura/mcd}`;
+//         console.log(`Aspect Ratio: ${aspectRatio}`);
+
+//     })
+//     .catch(error => {
+//         console.error(error);
+//     });
+
+
+/*
+ * Crea un programa que invierta el orden de una cadena de texto
+ * sin usar funciones propias del lenguaje que lo hagan de forma automática.
+ * - Si le pasamos "Hola mundo" nos retornaría "odnum aloH"
+ */
+
+function wordInversor(cadena) {
+
+    //La mejor forma de hacerlo es ir iterando
+
+    var cadenaInvertida = " ";
+
+    for (var i = cadena.length - 1; i >= 0; i--) {
+        cadenaInvertida = cadenaInvertida + cadena[i];
+    }
+
+    return console.log(cadenaInvertida);
+}
+
+// wordInversor("Hola mundo");
+
+/*
+ * Crea un programa que cuente cuantas veces se repite cada palabra
+ * y que muestre el recuento final de todas ellas.
+ * - Los signos de puntuación no forman parte de la palabra.
+ * - Una palabra es la misma aunque aparezca en mayúsculas y minúsculas.
+ * - No se pueden utilizar funciones propias del lenguaje que
+ *   lo resuelvan automáticamente.
+ */
+
+function contarPalabras(texto) {
+
+    var contador = {}
+    const textoLimpio = texto.toLowerCase().replace(/[^\w\s]/g, '');
+    const palabras = textoLimpio.split(/\s+/);
+
+    for (var i = 0; i < palabras.length; i++) {
+        var palabraActual = palabras[i];
+    }
+
+    if (palabraActual) {
+        contador[palabraActual] = (contador[palabraActual] || 0) + 1;
+    }
+    return console.log(contador);
+
+}
+
+// contarPalabras("Hola como hola como hola como");
+
+
+/*
+ * Crea un programa se encargue de transformar un número
+ * decimal a binario sin utilizar funciones propias del lenguaje que lo hagan directamente.
+ */
+
+
+function decimalABinario(decimal) {
+
+    if (decimal === 0) return "0";
+
+    var numero = decimal;
+    let binario = " ";
+
+    while (numero > 0) {
+        let residuo = numero % 2;      // Obtener el bit (0 o 1)
+        binario = residuo + binario;   // Agregar al inicio
+        numero = Math.floor(numero / 2); // Actualizar número
+    }
+
+    return console.log(binario);
+
+}
+
+decimalABinario(25);
